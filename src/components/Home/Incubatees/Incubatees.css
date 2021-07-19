@@ -1,0 +1,63 @@
+:root {
+  --main-navbar-footer-color: #000000;
+  --orange-color: #fd933c;
+  --blue-color: #007bff;
+  --light-pink: #faf0f0;
+  --dark-pink: #ff4081;
+  --green: #8bc43e;
+  --yellow: #ffa500;
+  --light-gray: #808080;
+  --overlay: #00000019;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", "Lato";
+  font-size: 16px;
+}
+
+/* Reusable componets  */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.item {
+  box-shadow: 2px 1px -1px rgb(26, 22, 22);
+  margin: 4px 4px;
+}
+.item .card {
+  width: 100%;
+  /* box-shadow: 2px 2px 12px var(--orange-color); */
+  border-bottom-left-radius: 40px;
+  border: 1px solid rgb(230, 230, 230);
+}
+.item .card:hover {
+  box-shadow: 2px 2px 19px var(--green);
+  transition: 0.5s ease-in-out;
+}
+.card .card-header {
+  background: var(--orange-color);
+}
+.incubation-section h1 {
+  text-align: center;
+}
+
+@media (min-width: 200px) and (max-width: 1023px) {
+  .incubation-section {
+    margin-bottom: -42px;
+  }
+  .incubation-section h1 {
+    text-align: center;
+  }
+}

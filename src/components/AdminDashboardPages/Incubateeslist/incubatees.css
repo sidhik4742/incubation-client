@@ -1,0 +1,147 @@
+:root {
+  --main-navbar-footer-color: #000000;
+  --orange-color: #fd933c;
+  --blue-color: #007bff;
+  --light-pink: #faf0f0;
+  --dark-pink: #ff4081;
+  --green: #8bc43e;
+  --yellow: #ffa500;
+  --light-gray: #808080;
+  --overlay: #00000019;
+}
+
+/* ////////////////////////////////// */
+/* small screen media query */
+/* ////////////////////////////////// */
+
+/* adduser btn style  */
+.btn-info-adduser {
+  background-color: var(--main-navbar-footer-color);
+  margin-bottom: 10px;
+  transition: 0.4s ease-in;
+  color: #faf0f0;
+}
+.btn-info-adduser:hover,
+#User-add-section .login-modal .btn-add-user:hover {
+  background-color: #faf0f0;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.btn-delete-table {
+  padding: 6px 15px;
+  background-color: var(--orange-color);
+  transition: 0.4s ease-in;
+}
+.btn-delete-table:hover {
+  background-color: #ffb515;
+}
+
+.btn-Update-table {
+  background-color: var(--green);
+  transition: 0.4s ease-in;
+}
+.btn-Update-table:hover {
+  background-color: #82df08;
+}
+
+@media (min-width: 200px) and (max-width: 1020px) {
+  .btn-flex-for-small-screen {
+    display: flex;
+  }
+  #incubatees-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #incubatees-heading h4 {
+    font-size: 17px;
+  }
+  .btn-info-adduser {
+    padding: 4px 12px;
+  }
+  /* table scroll design  */
+  .table-fixed-user {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+  }
+  .table-fixed-user thead {
+    flex: 0 0 auto;
+    overflow-y: auto;
+  }
+
+  .table-fixed-user tbody {
+    /* flex: 1 1 auto; */
+    height: 400px;
+    /* display: block; */
+    overflow-y: auto;
+    /* overflow-x: hidden; */
+  }
+
+  /* // show password icon style  */
+}
+
+/* //////////////////////////////////// */
+/* large scren media query  */
+/* /////////////////////////////// */
+
+@media (min-width: 1024px) {
+  #incubatees-heading {
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn-info-adduser {
+    padding: 8px 33px;
+  }
+  /* ///// Add user style  */
+  #User-add-section {
+    width: 600px;
+  }
+  #User-add-section .login-modal .btn-add {
+    padding: 10px 23px;
+    background-color: var(--orange-color);
+    transition: 0.4s ease-in;
+  }
+  #User-add-section .login-modal .btn-add:hover {
+    background-color: var(--green);
+  }
+  #User-add-section .login-modal .btn-add-user {
+    background-color: var(--main-navbar-footer-color);
+    padding: 12px 23px;
+    transition: 0.4s ease-in;
+    color: #faf0f0;
+  }
+
+  /* ////////// Table scroll design */
+
+  .table-fixed-user {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+  }
+
+  .table-fixed-user thead {
+    flex: 0 0 auto;
+  }
+
+  .table-fixed-user tbody {
+    flex: 1 1 auto;
+    height: 500px;
+    display: block;
+    overflow-y: auto;
+    overflow-x: scroll;
+  }
+
+  .table-fixed-user tr {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+  }
+
+  /* // show password icon style  */
+  .password-icon:hover {
+    color: var(--orange-color);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,134 @@
+:root {
+  --main-navbar-footer-color: #000000;
+  --orange-color: #fd933c;
+  --blue-color: #007bff;
+  --light-pink: #faf0f0;
+  --dark-pink: #ff4081;
+  --green: #8bc43e;
+  --yellow: #ffa500;
+  --light-gray: #808080;
+  --overlay: #00000019;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", "Lato";
+  font-size: 16px;
+}
+
+/* Reusable componets  */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+#userNav {
+  background-color: #000000;
+}
+
+/* .main-navbar1 .nav-link  style  */
+.nav-link1 a {
+  text-decoration: none;
+  color: var(--light-gray);
+}
+.main-navbar1 .nav-link1 a:hover {
+  color: var(--orange-color);
+  transition: 0.6s ease;
+  /* background-color: #8bc43e; */
+}
+
+.main-navbar1 .nav-link1 {
+  margin-top: 42px;
+  margin-left: 18px;
+  margin-right: 18px;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: var(--light-gray);
+}
+
+#main-payment-section {
+}
+.conatainer {
+  height: 67vh;
+  overflow-y: scroll;
+  position: relative;
+  top: 5rem;
+  margin: 20px;
+  padding: 15px;
+  padding-top: 0;
+  border: 1px solid black;
+}
+
+.small-screen-logo1 img {
+  height: 80px;
+  width: 70px;
+}
+
+/* modal */
+
+.model{
+  position: absolute;
+  top: 7rem;
+  left: 50%;
+  width: 60vw;
+  transform: translate(-50%);
+}
+
+.info-msg,
+.success-msg,
+.warning-msg,
+.error-msg {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+}
+.info-msg {
+  color: #059;
+  background-color: #bef;
+}
+.success-msg {
+  color: #270;
+  background-color: #dff2bf;
+}
+.warning-msg {
+  color: #9f6000;
+  background-color: #feefb3;
+}
+.error-msg {
+  color: #d8000c;
+  background-color: #ffbaba;
+}
+
+/* modal */
+
+@media (min-width: 200px) and (max-width: 1023px) {
+  .small-screen-logo1 img {
+    height: 60px;
+    width: 50px;
+    margin-left: auto;
+  }
+  .main-navbar1 .nav-link1 {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  .main-navbar1 {
+    border: 1px solid #242e17;
+  }
+}
+
+@media (min-width: 1025px) {
+  .user-navbar .navbar-padding {
+    padding-left: 160px;
+    padding-right: 160px;
+  }
+}

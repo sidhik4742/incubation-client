@@ -1,0 +1,119 @@
+:root {
+  --main-navbar-footer-color: #000000;
+  --orange-color: #fd933c;
+  --blue-color: #007bff;
+  --light-pink: #faf0f0;
+  --dark-pink: #ff4081;
+  --green: #8bc43e;
+  --yellow: #ffa500;
+  --light-gray: #808080;
+  --overlay: #00000019;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", "Lato";
+  font-size: 16px;
+}
+
+/* Reusable componets  */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.aboutus-section {
+  position: relative;
+  top: 120px;
+}
+.about-heading {
+  text-align: center;
+}
+
+/* card section style */
+
+.icon-img {
+  width: 80px;
+  height: 80px;
+  margin-top: 23px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-heading {
+  text-align: center;
+}
+
+.card-box-shadow {
+  position: relative;
+}
+.card-box-shadow::before,
+.card-box-shadow::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 25px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width: 300px;
+  background: rgb(173, 145, 145);
+  -webkit-box-shadow: 0 35px 20px #777;
+  -moz-box-shadow: 0 35px 20px #777;
+  box-shadow: 0 35px 20px #777;
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -o-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
+.card-box-shadow::after {
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  transform: rotate(8deg);
+  right: 10px;
+  left: auto;
+}
+.card1 {
+  background: #b8d8d8;
+  border: none;
+  padding: 0 15px;
+}
+
+.card2 {
+  background: #d5e5a3;
+  border: none;
+  padding: 0 5px;
+}
+
+.card3 {
+  background: #ffe28c;
+  border: none;
+  padding: 0 15px;
+}
+.card-body-text {
+  text-align: left;
+  font-size: 16px;
+}
+.card1 .card-body-text {
+  color: #506568;
+}
+.card2 .card-body-text {
+  color: #60773d;
+}
+.card3 .card-body-text {
+  color: #b25825;
+}
+

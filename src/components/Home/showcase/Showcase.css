@@ -1,0 +1,208 @@
+:root {
+  --main-navbar-footer-color: #000000;
+  --orange-color: #fd933c;
+  --blue-color: #007bff;
+  --light-pink: #faf0f0;
+  --dark-pink: #ff4081;
+  --green: #8bc43e;
+  --yellow: #ffa500;
+  --light-gray: #808080;
+  --overlay: #00000019;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", "Lato";
+  font-size: 16px;
+}
+
+/* Reusable componets  */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.showcase-container {
+  position: relative;
+  top: 85px;
+  left: 0;
+  height: 50vh;
+  background: #000000;
+}
+
+/* /////////////////////////////// */
+/* small screen media query */
+/* ///////////////////////////////// */
+
+@media (min-width: 200px) and (max-width: 1023px) {
+  /* showcase style  */
+  /* ///////////////////// */
+
+  .showcase-container {
+    height: 280px;
+    color: #faf0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 50% 55%;
+    /* border-bottom-right-radius: 5% 15%; */
+    box-shadow: 0 13px 2px #6c766098;
+  }
+  .showcase-container h1 {
+    font-size: 13px;
+    -webkit-box-reflect: below -8px linear-gradient(transparent, rgba(0, 0, 0, 0.063));
+    font-weight: 500;
+  }
+
+  .showcase-container .shape-heading::before {
+    content: "";
+    display: block;
+    position: relative;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    transform: rotate(40deg);
+    height: 20px;
+    width: 20px;
+
+    /* border-radius: 50%; */
+    background: var(--orange-color);
+    box-shadow: 12px 15px 23px var(--orange-color);
+  }
+
+  /* dynamice text animation  */
+  .dynamic-txt {
+    position: relative;
+    -webkit-box-reflect: below -18px linear-gradient(transparent, #0002);
+  }
+  .dynamic-txt::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 2px;
+    width: 2px;
+    height: 60%;
+    background: var(--orange-color);
+    animation: blinkCursor 0.8s steps(4) infinite;
+  }
+  @keyframes blinkCursor {
+    0%,
+    75% {
+      opacity: 1;
+    }
+    76%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .dynamic-txt h1 {
+    position: relative;
+    animation: typing 8s steps(7) infinite;
+    color: var(--orange-color);
+    overflow: hidden;
+  }
+
+  @keyframes typing {
+    0%,
+    90%,
+    100% {
+      width: 0;
+    }
+    30%,
+    60% {
+      width: 70px;
+    }
+  }
+}
+
+/* //////////////////////////////////// */
+/* large laptop scren media query  */
+/* /////////////////////////////// */
+@media (min-width: 1024px) {
+  /* showacse section  */
+
+  .showcase-container {
+    height: 350px;
+    color: #faf0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 50% 45%;
+    border-bottom-right-radius: 50% 45%;
+    box-shadow: 0 13px 2px #6c766098;
+  }
+
+  .showcase-container .shape-heading {
+    font-size: 42px;
+    -webkit-box-reflect: below -28px linear-gradient(transparent, rgba(0, 0, 0, 0.063));
+    font-weight: 600;
+  }
+  .showcase-container .shape-heading::before {
+    content: "";
+    display: block;
+    transform: rotate(45deg);
+    height: 40px;
+    width: 40px;
+    background: #fd933ce0;
+    margin-top: 55px;
+    box-shadow: 23px 35px 33px var(--orange-color);
+  }
+
+  /* dynamice text animation  */
+  .dynamic-txt {
+    position: relative;
+    -webkit-box-reflect: below -18px linear-gradient(transparent, #0002);
+  }
+  .dynamic-txt::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 2px;
+    width: 2px;
+    height: 100%;
+    background: var(--orange-color);
+    animation: blinkCursor 0.8s steps(4) infinite;
+  }
+  @keyframes blinkCursor {
+    0%,
+    75% {
+      opacity: 1;
+    }
+    76%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .dynamic-txt h1 {
+    position: relative;
+    animation: typing 8s steps(7) infinite;
+    color: var(--orange-color);
+    overflow: hidden;
+  }
+
+  @keyframes typing {
+    0%,
+    90%,
+    100% {
+      width: 0;
+    }
+    30%,
+    60% {
+      width: 188px;
+    }
+  }
+}
