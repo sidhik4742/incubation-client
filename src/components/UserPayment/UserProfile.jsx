@@ -15,9 +15,7 @@ import { getAllPlans } from "../../routes/user.js";
 // signout method
 
 function UserProfile() {
-  const [succesOpen, setSuccesOpen] = useState(false);
-  const [errorOpen, setErrorOpen] = useState(false);
-  const [billingDetails, setBillingDetails] = useState({
+  const initialBillingDetails = {
     companyName: "",
     firstName: "",
     lastName: "",
@@ -27,13 +25,20 @@ function UserProfile() {
     country: "",
     zip: "",
     town: "",
-  });
+  };
+  const [succesOpen, setSuccesOpen] = useState(false);
+  const [errorOpen, setErrorOpen] = useState(false);
+  const [billingDetails, setBillingDetails] = useState(initialBillingDetails);
   const [allPlans, setAllPlans] = useState([]);
 
   useEffect(() => {
     const getAllPans = async () => {
-      let allPlans = await getAllPlans();
+      const {
+        user: { _id },
+      } = isAuthenticated();
+      let { allPlans, userEmail } = await getAllPlans(_id);
       console.log(allPlans);
+      setBillingDetails({ ...billingDetails, email: userEmail });
       setAllPlans(allPlans);
     };
     getAllPans();
@@ -44,7 +49,6 @@ function UserProfile() {
     setTimeout(() => {
       setSuccesOpen(false);
     }, 1000);
-
   }, [succesOpen]);
 
   useEffect(() => {
@@ -63,7 +67,10 @@ function UserProfile() {
   const formSubmitHandler = async (event) => {
     event.preventDefault();
     console.log(billingDetails);
-    const orderInitiated = await getPaymentDetails(billingDetails);
+    const {
+      user: { _id },
+    } = await isAuthenticated();
+    const orderInitiated = await getPaymentDetails(billingDetails, _id);
     console.log(orderInitiated);
     if (orderInitiated.result) {
       let paymentDetails = {
@@ -80,6 +87,7 @@ function UserProfile() {
         paymentResult.razorpay_payment_id &&
         paymentResult.razorpay_signature
       ) {
+        setBillingDetails(initialBillingDetails);
         setSuccesOpen(true);
       }
     } else {
@@ -159,6 +167,7 @@ function UserProfile() {
                   <input
                     type="text"
                     name="companyName"
+                    value={billingDetails.companyName}
                     className="form-control"
                     id="exampleInputName"
                     onChange={inputHandler}
@@ -173,6 +182,7 @@ function UserProfile() {
                     <input
                       type="text"
                       name="firstName"
+                      value={billingDetails.firstName}
                       className="form-control"
                       id="exampleInputName"
                       onChange={inputHandler}
@@ -186,6 +196,7 @@ function UserProfile() {
                     <input
                       type="text"
                       name="lastName"
+                      value={billingDetails.lastName}
                       className="form-control"
                       id="exampleInputName"
                       onChange={inputHandler}
@@ -200,11 +211,13 @@ function UserProfile() {
                   <input
                     type="email"
                     name="email"
+                    value={billingDetails.email}
                     className="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     onChange={inputHandler}
                     required
+                    // readOnly
                   />
                   <div id="emailHelp" className="form-text">
                     We'll never share your email with anyone else.
@@ -217,6 +230,7 @@ function UserProfile() {
                   <input
                     type="number"
                     name="contactNo"
+                    value={billingDetails.contactNo}
                     className="form-control"
                     id="exampleInputPhone"
                     onChange={inputHandler}
@@ -230,6 +244,7 @@ function UserProfile() {
                   <select
                     className="form-control"
                     name="plan"
+                    value={billingDetails.plan}
                     id="exampleFormControlSelect1"
                     onChange={inputHandler}
                   >
@@ -248,6 +263,7 @@ function UserProfile() {
                   <input
                     type="text"
                     name="country"
+                    value={billingDetails.country}
                     className="form-control"
                     id="exampleInputName"
                     onChange={inputHandler}
@@ -265,6 +281,7 @@ function UserProfile() {
                     <input
                       type="number"
                       name="zip"
+                      value={billingDetails.zip}
                       className="form-control"
                       id="exampleInputPassword1"
                       onChange={inputHandler}
@@ -281,6 +298,7 @@ function UserProfile() {
                     <input
                       type="text"
                       name="town"
+                      value={billingDetails.town}
                       className="form-control"
                       id="exampleInputPassword1"
                       onChange={inputHandler}

@@ -3,12 +3,12 @@ import axios from "axios";
 import { paymentApi } from "../api/index";
 import { urlevent } from "../constants/baseUrl";
 
-export const getPaymentDetails = (billingDetails) => {
+export const getPaymentDetails = (details, id) => {
   try {
-    // console.log(token);
+    // console.log(id);
     return new Promise((resolve, reject) => {
       axios
-        .post(`${urlevent}/${paymentApi.getPaymentDetails}`, billingDetails)
+        .post(`${urlevent}/${paymentApi.getPaymentDetails}`, { details, id })
         .then(function (response) {
           // console.log(response.data);
           resolve(response.data);

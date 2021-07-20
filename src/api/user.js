@@ -1,4 +1,4 @@
 export const userApi = {
-    getallplans: "user/getallplans",
-  };
-  
+  getallplans: "user/getallplans",
+  getallsubscribers: "user/getallsubscribers",
+};

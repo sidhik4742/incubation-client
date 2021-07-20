@@ -1,14 +1,14 @@
 import axios from "axios";
 
-import { paymentApi, userApi } from "../api/index";
+import { userApi } from "../api/index";
 import { urlevent } from "../constants/baseUrl";
 
-export const getAllPlans = (id) => {
+export const getallsubscribers = (id) => {
   try {
     // console.log(token);
     return new Promise((resolve, reject) => {
       axios
-        .get(`${urlevent}/${userApi.getallplans}?id=${id}`)
+        .get(`${urlevent}/${userApi.getallsubscribers}`)
         .then(function (response) {
           // console.log(response.data);
           resolve(response.data);
@@ -18,6 +18,6 @@ export const getAllPlans = (id) => {
         });
     });
   } catch (error) {
-    console.log("something went to wrong in the /user/payment");
+    console.log("something went to wrong in the /user/getallsubscribers");
   }
 };
